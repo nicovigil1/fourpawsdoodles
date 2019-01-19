@@ -16,7 +16,7 @@ class Admin::ParentsController < Admin::BaseController
     def create
         @parent = Parent.new(parent_params)
         if @parent.save            
-            redirect_to parents_path
+            redirect_to admin_parents_path
         else
             @errors = @parent.errors.full_messages
             render new_admin_parent_path
