@@ -10,14 +10,16 @@
         Parents
     </h1>
     
-    <table id="parents-table">
-        <tr>
-            <th>Name</th>
-            <th>Breed</th>
-            <th>Genetics</th>
-            <th>Registration</th>
-            <th>Role</th>
-        </tr>
+    <table class="ui celled table" id="parents-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Genetics</th>
+                <th>Registration</th>
+                <th>Role</th>
+            </tr>
+        </thead>
         
         <tbody>
             <% @parents.each do |parent|%>
