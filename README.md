@@ -69,3 +69,5 @@ pricing cards for easy updates
 
 ## Needs CRUD - create functionality for puppies
 ## Test create functionality for litters - works on localhost
+
+## litters - make it so that the name is automatically generated as parent1_parent2_bmonth_byear
