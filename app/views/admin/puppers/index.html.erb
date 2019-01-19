@@ -1,21 +1,26 @@
-<h1>All Puppies</h1>
-<table>
-    <thead>
-        <th>Birthday</th>
-        <th>Gender</th>
-        <th>Breed</th>
-        <th>Litter</th>
-        <th>Sold?</th>
-        <th>Mark as Sold</th>
-    </thead>
+<div class="ui container">
+    <h1>All Puppies</h1>
+    <table class="ui celled table">
+        <thead>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Breed</th>
+            <th>Litter</th>
+            <th>Sold?</th>
+            <th>Mark as Sold</th>
+        </thead>
 
-    <% @puppers.each do |pupper| %>
-    <tbody id="pupper-<%= pupper.id %>"">
-        <td><%= pupper.gender %></td>
-        <td><%= pupper.litter.breed %></td>
-        <td><%= pupper.sold? %></td>
-    </tbody>
-    <% end %>
-</table>
+        <% @puppers.each do |pupper| %>
+        <tbody id="pupper-<%= pupper.id %>"">
+            <td><%= pupper.litter.birthday %></td>
+            <td><%= pupper.gender %></td>
+            <td><%= pupper.litter.breed %></td>
+            <td><%= link_to pupper.litter.name, admin_litter_path(pupper.litter.name) %></td>
+            <td><%= pupper.sold? %></td>
+            <td class='ui button'>this does nothing rn</td>
+        </tbody>
+        <% end %>
+    </table>
 
-<%= link_to 'add a pupper', new_admin_pupper_path %>
+    <%= link_to 'add a pupper', new_admin_pupper_path, {class: "ui button"} %>
+</div>

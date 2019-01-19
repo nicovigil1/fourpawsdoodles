@@ -1,25 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Four Paws Doodles</title>
-</head>
-<body>
-    <h1>Parent</h1>
-    <table id="parent-<%=@parent.id%>" class="parent">
+<div class="ui container">
+    <h1><%= @parent.name %>'s stats</h1>
+    <table id="parent-<%=@parent.id%>" class="parent ui celled table">
         <thead>
-            <th>Name</th>
             <th>Breed</th>
             <th>Genetics</th>
             <th>Role</th>
-            <th></th>
+            <th>Delete</th>
+            <th>Edit</th>
         </thead>
 
         <tbody>
             <tr>
-                <td><%= @parent.name %></td>
                 <td><%= @parent.breed %></td>
                 <td><%= @parent.genetics %></td>
                 <td><%= @parent.role %></td>
@@ -37,33 +28,34 @@
         </tbody>
     </table>
 
-    <h1>Litters</h1>
+    <h2>Associated Litters</h2>
     <div id="litters">
         <%@litters.each do |litter|%>
+            <div class="ui segment">
+                <h3>Name: <%= link_to litter.name, admin_litter_path(litter) %> <br>
+                Birthday: <%= litter.birthday %></h3>
+                <table class="ui celled table">
+                    <thead>
+                        <tr>Associated Puppies:</tr>
+                        <th>Puppy ID</th>
+                        <th>Gender</th>
+                        <th>Breed</th>
+                        <th>Other Parent</th>
+                    </thead>
 
-            <h1><%=litter.name%></h1>
-            <h3><%= litter.birthday %></h3>
-
-            <table>
-                <thead>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Breed</th>
-                    <th>Other Parent</th>
-                </thead>
-
-                <%  litter.puppers.each do |pupper| %>
-                    <tbody>
-                        <td><%= pupper.id %></td>
-                        <td><%= pupper.gender %></td>
-                        <td><%= litter.breed %></td>
-                        <td>
-                            <%=(pupper.parents - [@parent]).first.name%>
-                        </td>
-                    </tbody>
-                <%end%>
-            </table>
+                    <%  litter.puppers.each do |pupper| %>
+                        <tbody>
+                            <td><%= pupper.id %></td>
+                            <td><%= pupper.gender %></td>
+                            <td><%= litter.breed %></td>
+                            <td>
+                                <% #fixme: refactor the heck out of this %>
+                                <%=link_to (pupper.parents - [@parent]).first.name, admin_parent_path((pupper.parents - [@parent]).first)%>
+                            </td>
+                        </tbody>
+                    <%end%>
+                </table>
+            </div>
         <%end%>
     </div>
-</body>
-</html>
+</div>
