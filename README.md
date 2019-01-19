@@ -71,3 +71,5 @@ pricing cards for easy updates
 ## Test create functionality for litters - works on localhost
 
 ## litters - make it so that the name is automatically generated as parent1_parent2_bmonth_byear
+
+### set up the parents index page to separate the mother's from the father's - may require a migration
