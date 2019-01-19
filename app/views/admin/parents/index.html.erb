@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Four Paws Doodles</title>
+</head>
+<body>
+    <h1>
+        Parents
+    </h1>
+    
+    <table id="parents-table">
+        <tr>
+            <th>Name</th>
+            <th>Breed</th>
+            <th>Genetics</th>
+            <th>Registration</th>
+            <th>Role</th>
+        </tr>
+        
+        <tbody>
+            <% @parents.each do |parent|%>
+            <tr>
+                <td>
+                    <%= link_to "#{parent.name}", admin_parent_path(parent) %>
+                </td>
+                <td><%= parent.breed %></td>
+                <td><%= parent.genetics %></td>
+                <td><%= parent.registration %></td>
+                <td><%= parent.role %></td>
+            </tr>
+            <% end %>
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <%= link_to 'Add a Parent', new_admin_parent_path %>
+    <%= link_to 'View All Litters', admin_litters_path %>
+
+</body>
+</html>

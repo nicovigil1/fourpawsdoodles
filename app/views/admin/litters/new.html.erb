@@ -1,0 +1,19 @@
+<%= form_for @litter do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :birthday %>
+<%= f.date_field :birthday %>
+<%= f.label :breed %>
+<%= f.text_field :breed %>
+<%= label_tag("litter[parents]", "Mother") %>
+<%= collection_select("litter[parents]", :mother, @parents, :id, :name) %>
+<%= label_tag("litter[parents]", "Father") %>
+<%= collection_select("litter[parents]", :father, @parents, :id, :name) %>
+<%= label_tag("litter[boys]", "Boys") %>
+<%= select_tag("litter[boys]", options_for_select([[0, 0], [1, 1], [2, 2], [3, 3], [4, 4],
+                                                  [5, 5], [6, 6]])) %>
+<%= label_tag("litter[girls]", "Girls") %>
+<%= select_tag("litter[girls]", options_for_select([[0, 0], [1, 1], [2, 2], [3, 3], [4, 4],
+                                                  [5, 5], [6, 6]])) %>
+<%= f.submit "add litter" %>
+<% end  %>

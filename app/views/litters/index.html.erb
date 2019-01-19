@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Litters</title>
+</head>
+<body>
+    <h1>Available Litters</h1>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Puppy Count</th>
+            <th>Parents</th>
+            <th>Breed</th>
+        </thead>
+
+        <tbody>
+            <% @litters.each do |litter| %>
+                <tr id=<%="litter-#{litter.id}"%>>
+                    <td><%=link_to litter.name, litter_path(litter) %></td>
+                    <td><%= litter.birthday %></td>
+                    <td><%= litter.puppers.count %></td>
+                        <td>
+                            <%= link_to "#{litter.parents[0].name}", parent_path(litter.parents[0])%> 
+                            <%= link_to "#{litter.parents[1].name}", parent_path(litter.parents[1])%> 
+                        </td>
+                    <td><%= litter.breed %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+</body>
+</html>

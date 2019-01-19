@@ -1,0 +1,16 @@
+<%= form_for @pupper do |f| %>
+<%= label_tag("puppers[boys]", "Boys") %>
+<%= select_tag("puppers[boys]", options_for_select([[0, 0], [1, 1], [2, 2], [3, 3,], [4, 4], 
+                                      [5, 5], [6, 6], [7, 7]])) %>
+<%= label_tag("puppers[girls]", "Girls") %>
+<%= select_tag("puppers[girls]", options_for_select([[0, 0], [1, 1], [2, 2], [3, 3,], [4, 4], 
+                                      [5, 5], [6, 6], [7, 7]])) %>
+<%= label_tag("sire", "Sire") %>
+<%= collection_select("sire", :parents, Parent.all, :id, :name) %>
+<%= label_tag("dam", "Dam") %>
+<%= collection_select("dam", :parents, Parent.all, :id, :name) %>
+
+<%= f.submit %>
+<% end %>
+
+<%#FIXME -  ADD LITTER%> 

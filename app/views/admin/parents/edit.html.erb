@@ -1,0 +1,15 @@
+<h1>Edit <%= @parent.name %></h1>
+<%= form_for [:admin, @parent] do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :breed %>
+<%= f.text_field :breed %>
+<%= f.label :registration %>
+<%= f.text_field :registration %>
+<%= f.label :genetics %>
+<%= f.text_field :genetics %>
+<%= f.label :role %>
+<% #FIXNE: NEEDS TO BE A DROPDOWN (SELECT) %>
+<%= f.text_field :role %>
+<%= f.submit "Submit" %>
+<% end %>

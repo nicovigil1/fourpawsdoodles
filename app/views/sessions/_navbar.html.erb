@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <ul>
+    <% if current_user && current_user.role == "admin" %>
+        <li><%= link_to 'Home', admin_litters_path %></li>
+        <li><%= link_to 'Parents', admin_parents_path %></li>
+        <li><%= link_to 'Puppies', admin_puppers_path %></li>
+        <li><%= link_to 'Litters', admin_litters_path %></li>
+        <li><%= link_to 'log out', admin_session_path(current_user), method: :delete %></li>
+    <% else %>
+        <li><%= link_to 'Home', litters_path %></li>
+        <li><%= link_to 'Parents', parents_path %></li>
+        <li><%= link_to 'Puppies', puppers_path %></li>
+        <li><%= link_to 'Litters', litters_path %></li>
+    <% end %>
+    </ul>
+</nav>
