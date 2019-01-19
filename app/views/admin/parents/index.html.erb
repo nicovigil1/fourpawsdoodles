@@ -10,25 +10,27 @@
         Parents
     </h1>
     
-    <table id="parents-table">
-        <tr>
-            <th>Name</th>
-            <th>Breed</th>
-            <th>Genetics</th>
-            <th>Registration</th>
-            <th>Role</th>
-        </tr>
+    <table class="ui celled table" id="parents-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>Genetics</th>
+                <th>Registration</th>
+                <th>Role</th>
+            </tr>
+        </thead>
         
         <tbody>
             <% @parents.each do |parent|%>
             <tr>
-                <td>
+                <td data-label="Name">
                     <%= link_to "#{parent.name}", admin_parent_path(parent) %>
                 </td>
-                <td><%= parent.breed %></td>
-                <td><%= parent.genetics %></td>
-                <td><%= parent.registration %></td>
-                <td><%= parent.role %></td>
+                <td data-label="Breed"><%= parent.breed %></td>
+                <td data-label="Genetics"><%= parent.genetics %></td>
+                <td data-label="Registration"><%= parent.registration %></td>
+                <td data-label="Role"><%= parent.role %></td>
             </tr>
             <% end %>
         </tbody>
@@ -37,8 +39,8 @@
 
     <br>
 
-    <%= link_to 'Add a Parent', new_admin_parent_path %>
-    <%= link_to 'View All Litters', admin_litters_path %>
+    <%= link_to 'Add a Parent', new_admin_parent_path, {class: "ui button"} %>
+    <%= link_to 'View All Litters', admin_litters_path, {class: "ui button"} %>
 
 </body>
 </html>

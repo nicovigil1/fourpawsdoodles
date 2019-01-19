@@ -1,15 +1,15 @@
-<table>
+<h1>Available Puppies!</h1>
+<table class="ui celled table">
     <thead>
         <th>Birthday</th>
         <th>Gender</th>
         <th>Breed</th>
-        <th>Litter</th>
         <th>Sold?</th>
-        <th>Mark as Sold</th>
     </thead>
 
     <% @puppers.each do |pupper| %>
     <tbody id="pupper-<%= pupper.id %>"">
+        <td><%= pupper.litter.birthday %></td>
         <td><%= pupper.gender %></td>
         <td><%= pupper.litter.breed %></td>
         <td><%= pupper.sold? %></td>
