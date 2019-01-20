@@ -1,22 +1,24 @@
-<h1>Available Puppies!</h1>
-<table class="ui celled table">
-    <thead>
-        <th>Birthday</th>
-        <th>Gender</th>
-        <th>Breed</th>
-        <th>Sold?</th>
-    </thead>
+<div class="ui container">
+    <h1>Available Puppies!</h1>
+    <table class="ui celled table">
+        <thead>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Breed</th>
+            <th>Sold?</th>
+        </thead>
 
-    <% @puppers.each do |pupper| %>
-    <tbody id="pupper-<%= pupper.id %>"">
-        <td><%= pupper.litter.birthday %></td>
-        <td><%= pupper.gender %></td>
-        <td><%= pupper.litter.breed %></td>
-        <td><%= pupper.sold? %></td>
-    </tbody>
-    <% end %>
-</table>
+        <% @puppers.each do |pupper| %>
+        <tbody id="pupper-<%= pupper.id %>"">
+            <td><%= pupper.litter.birthday %></td>
+            <td><%= pupper.gender %></td>
+            <td><%= pupper.litter.breed %></td>
+            <td><%= pupper.sold? %></td>
+        </tbody>
+        <% end %>
+    </table>
 
-<h1>
-    THIS IS FOR THE PLEBS
-</h1>
+    <h1>
+        THIS IS FOR THE PLEBS
+    </h1>
+</div>
