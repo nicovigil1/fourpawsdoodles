@@ -7,4 +7,12 @@ class Parent < ApplicationRecord
     validates_presence_of :breed, on: :create, message: "can't be blank"
     validates_presence_of :genetics, on: :create, message: "can't be blank"
     validates_presence_of :role, on: :create, message: "can't be blank"
+
+    def self.mothers
+        Parent.where(role: "dam")
+    end 
+
+    def self.fathers
+        Parent.where(role: "sire")
+    end 
 end 

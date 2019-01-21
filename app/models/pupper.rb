@@ -14,4 +14,8 @@ class Pupper < ApplicationRecord
         end
     end
 
+    def self.unsold
+        Pupper.where(sold: false)
+    end 
+
 end

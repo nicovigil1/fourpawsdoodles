@@ -29,7 +29,7 @@
                     </div>
                     <div class="field">
                         <%= f.label :role%>
-                        <%= f.text_field :role%>
+                        <%= f.select(:role, ([["Dam", "dam"], ["Sire", "sire"]]), {include_blank:""}, { :class => "ui fluid dropdown" })%>
                     </div>
                 </div>
                     <%=f.submit class: "ui button"%>

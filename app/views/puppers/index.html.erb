@@ -2,18 +2,29 @@
     <h1>Available Puppies!</h1>
     <table class="ui celled table">
         <thead>
-            <th>Birthday</th>
+            <th>Puppy ID</th>
+            <th>Litter</th>
             <th>Gender</th>
             <th>Breed</th>
-            <th>Sold?</th>
+            <th>Parents</th>
+            <th>Status</th>
         </thead>
 
         <% @puppers.each do |pupper| %>
         <tbody id="pupper-<%= pupper.id %>"">
-            <td><%= pupper.litter.birthday %></td>
+            <td><%= pupper.id %></td>
+            <td><%= link_to pupper.litter.name, litter_path(pupper.litter) %></td>
             <td><%= pupper.gender %></td>
             <td><%= pupper.litter.breed %></td>
-            <td><%= pupper.sold? %></td>
+            <td>
+                <%= link_to pupper.parents.first.name, parents_path(pupper.parents.first) %>,
+                <%= link_to pupper.parents.last.name, parents_path(pupper.parents.last) %>
+            </td>
+            <% if pupper.sold? %>
+                <td> sold </td>
+            <% else %>
+                <td> unsold </td>
+            <% end %>
         </tbody>
         <% end %>
     </table>

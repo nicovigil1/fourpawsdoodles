@@ -1,11 +1,7 @@
 <div class="ui container">
     <div class="ui form">
-        <%= form_for @litter do |f| %>
-            <div class="three fields">
-                <div class="field">
-                    <%= f.label :name %>
-                    <%= f.text_field :name %>
-                </div>
+        <%= form_for [:admin, @litter] do |f| %>
+            <div class="two fields">
                 <div class="field">
                     <%= f.label :birthday %>
                     <%= f.date_field :birthday %>
@@ -17,13 +13,13 @@
             </div>
             
             <div class="four fields">
-                <div class="field">
+                <div id="Mother" class="field">
                     <%= label_tag("litter[parents]", "Mother") %>
-                    <%= collection_select("litter[parents]", :mother, @parents, :id, :name) %>
+                    <%= collection_select("litter[parents]", :mother, @mothers, :id, :name) %>
                 </div>
-                <div class="field">
+                <div id="Father" class="field">
                     <%= label_tag("litter[parents]", "Father") %>
-                    <%= collection_select("litter[parents]", :father, @parents, :id, :name) %>
+                    <%= collection_select("litter[parents]", :father, @fathers, :id, :name) %>
                 </div>
                 <div class="field">
                     <%= label_tag("litter[boys]", "Boys") %>

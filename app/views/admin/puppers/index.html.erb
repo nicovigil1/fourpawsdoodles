@@ -15,7 +15,7 @@
             <td><%= pupper.litter.birthday %></td>
             <td><%= pupper.gender %></td>
             <td><%= pupper.litter.breed %></td>
-            <td><%= link_to pupper.litter.name, admin_litter_path(pupper.litter.name) %></td>
+            <td><%= link_to pupper.litter.name, admin_litter_path(pupper.litter) %></td>
             <td><%= pupper.sold? %></td>
             <td class='ui button'>this does nothing rn</td>
         </tbody>

@@ -14,7 +14,8 @@ class Admin::LittersController < Admin::BaseController
     
     def new
         @litter = Litter.new
-        @parents = Parent.all
+        @mothers = Parent.mothers
+        @fathers = Parent.fathers
     end
 
     def create
@@ -28,10 +29,12 @@ class Admin::LittersController < Admin::BaseController
     private
 
     def litter_params
-        litter = params.require(:litter).permit(:name, :birthday, :breed)
+        litter = params.require(:litter).permit(:birthday, :breed)
         parents = params[:litter][:parents]
         mother = Parent.find(parents[:mother])
         father = Parent.find(parents[:father])
+        date = litter[:birthday].to_date
+        name = (litter[:name] = date.strftime("#{mother.name}-#{father.name} %b '%y"))
         {parents:[mother, father]}.merge(litter)
     end
 

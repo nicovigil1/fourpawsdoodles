@@ -75,3 +75,7 @@ pricing cards for easy updates
 ### set up the parents index page to separate the mother's from the father's - may require a migration
 
 ### set up a count of available puppies left in litters - only show those that have unsold puppies & within that only show available puppies (may change later)
+
+### style the login form 
+
+### make litter creation only have mothers or fathers in creation form - parent creation needs to have a select box for role. 
