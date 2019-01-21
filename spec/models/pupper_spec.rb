@@ -15,7 +15,20 @@ describe "a specification" do
         expect(Pupper.unsold).to_not include(girl_c)
     end
 
+    it '.toggle_sold - updates puppy to be sold' do
+        charles = Parent.create(name:"Charles", breed:"Goldendoodle", genetics:"F1", role:"sire")
+        hazel = Parent.create(name:"Hazel", breed:"Moyen Goldendoodle", genetics:"F1", role:"dam")
+        charles_litter_1 = Litter.create(name:"charles 1", birthday:"1/1/1970", parents:[charles, hazel])
+        charles_litter_2 = Litter.create(name:"charles 2", birthday:"5/5/1970", parents:[charles, hazel])
 
+        girl_a = Pupper.create(gender:"f", litter:charles_litter_1)
 
-    
+        girl_a.toggle_sold
+
+        expect(girl_a.sold).to eq(true)          
+
+        girl_a.toggle_sold
+
+        expect(girl_a.sold).to eq(false)          
+    end 
 end

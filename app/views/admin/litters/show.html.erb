@@ -13,8 +13,8 @@
         <tbody>
             <td><%= @litter.name %></td>
             <td><%= @litter.birthday %></td>
-            <td><%= link_to @parents[0].name, parent_path(@parents[0]) %>, 
-                <%= link_to @parents[1].name, parent_path(@parents[1]) %></td>
+            <td><%= link_to @parents[0].name, admin_parent_path(@parents[0]) %>, 
+                <%= link_to @parents[1].name, admin_parent_path(@parents[1]) %></td>
             <td><%= @boys_count %></td>
             <td><%= @girls_count %></td>
         </tbody>
@@ -35,9 +35,19 @@
             <td><%= pupper.gender %></td>
             <td><%= pupper.litter.breed %></td>
             <% if pupper.sold? %>
-                <td>Sold</td>
+            <td>
+                <div class="ui small buttons">
+                    <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
+                    <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
+                </div>
+            </td>
             <% else %>
-                <td>Unsold</td>
+                <td class="collapsing">
+                    <div class="ui small buttons">
+                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
+                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
+                    </div>
+                </td>
             <% end %>
         </tbody>
     <% end %>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :litters, only:[:index, :show, :new, :create]
     resources :puppers, only:[:index, :new, :create]
     resources :sessions, only:[:destroy]
+    patch "/admin/toggle_sold", to: "puppers#toggle_sold", as: "toggle_sold"
   end
 
   resources :parents, only:[:index, :show, :new]#, :new, :create, :destroy, :edit, :update]

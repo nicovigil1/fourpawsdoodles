@@ -54,5 +54,29 @@ describe 'Puppers' do
             expect(Litter.first.name).to eq("Hazel-Charles Dec '12")
         end     
     end
+
+    context "update" do
+        it 'puppies can be updated from the puppy index page' do 
+            user = User.create(username: "admin", password: "password", role: 2)
+            allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+            charles = Parent.create(name:"Charles", breed:"Goldendoodle", genetics:"F1", role:"sire")
+            hazel = Parent.create(name:"Hazel", breed:"Moyen Goldendoodle", genetics:"F1", role:"dam")
+            charles_litter_1 = Litter.create(name:"charles 1", birthday:"1/1/1970", parents:[charles, hazel])
+            charles_litter_2 = Litter.create(name:"charles 2", birthday:"5/5/1970", parents:[charles, hazel])
+
+            girl_a = Pupper.create(gender:"f", litter:charles_litter_1)
+            girl_b = Pupper.create(gender:"m", litter:charles_litter_2)
+
+
+            visit admin_puppers_path
+
+            within "#pupper-#{girl_a.id}" do 
+                expect(page).to have_button("Sold") 
+                expect(page).to have_button("Unsold") 
+            end            
+        end
+    end
+    
     
 end 

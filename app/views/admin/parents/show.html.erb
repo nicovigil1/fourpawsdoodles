@@ -41,6 +41,7 @@
                         <th>Gender</th>
                         <th>Breed</th>
                         <th>Other Parent</th>
+                        <th>Mark as Sold</th>
                     </thead>
 
                     <%  litter.puppers.each do |pupper| %>
@@ -51,6 +52,19 @@
                             <td>
                                 <% #fixme: refactor the heck out of this %>
                                 <%=link_to (pupper.parents - [@parent]).first.name, admin_parent_path((pupper.parents - [@parent]).first)%>
+                            </td>
+                            <td class="collapsing">
+                                <% if pupper.sold? %>
+                                    <div class="ui buttons">
+                                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
+                                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
+                                    </div>
+                                <% else %>
+                                    <div class="ui buttons">
+                                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
+                                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
+                                    </div>
+                                <% end %>
                             </td>
                         </tbody>
                     <%end%>

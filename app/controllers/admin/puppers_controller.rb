@@ -14,6 +14,12 @@ class Admin::PuppersController < Admin::BaseController
         # build_girls
     end
 
+    def toggle_sold
+        pupper = Pupper.find(params[:format])
+        pupper.toggle_sold
+        pupper.save
+        redirect_to request.referrer
+    end 
 
     private
 

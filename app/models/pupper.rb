@@ -18,4 +18,8 @@ class Pupper < ApplicationRecord
         Pupper.where(sold: false)
     end 
 
+    def toggle_sold 
+        toggle(:sold)
+    end
+
 end
