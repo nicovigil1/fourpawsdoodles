@@ -80,14 +80,6 @@ pricing cards for easy updates
 
 ### make litter creation only have mothers or fathers in creation form - parent creation needs to have a select box for role. 
 
-                <% if pupper.sold? %>
-                    <div class="ui buttons">
-                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
-                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
-                    </div>
-                <% else %>
-                    <div class="ui buttons">
-                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
-                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
-                    </div>
-                <% end %>
+### add sorting, edit, delete to puppy & litter 
+### add view only mothers, fathers to parents 
+### add view to puppies (visitor) for breed - sort for birthday / view for gender 

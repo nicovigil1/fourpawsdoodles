@@ -7,7 +7,6 @@
             <th>Gender</th>
             <th>Breed</th>
             <th>Parents</th>
-            <th>Status</th>
         </thead>
 
         <% @puppers.each do |pupper| %>
@@ -20,16 +19,7 @@
                 <%= link_to pupper.parents.first.name, parents_path(pupper.parents.first) %>,
                 <%= link_to pupper.parents.last.name, parents_path(pupper.parents.last) %>
             </td>
-            <% if pupper.sold? %>
-                <td> sold </td>
-            <% else %>
-                <td> unsold </td>
-            <% end %>
         </tbody>
         <% end %>
     </table>
-
-    <h1>
-        THIS IS FOR THE PLEBS
-    </h1>
 </div>

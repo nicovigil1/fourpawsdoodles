@@ -68,7 +68,7 @@ describe 'Puppers' do
             girl_a = Pupper.create(gender:"f", litter:charles_litter_1)
             girl_b = Pupper.create(gender:"m", litter:charles_litter_2)
 
-
+            
             visit admin_puppers_path
 
             within "#pupper-#{girl_a.id}" do 
