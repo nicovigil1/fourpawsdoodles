@@ -2,10 +2,23 @@ require 'rails_helper'
 
 describe 'Puppers' do
     context "create" do
-        
-    end
+        it 'can create a new pupper for a given litter' do 
+            charles = Parent.create(name:"Charles", breed:"Goldendoodle", genetics:"F1", role:"sire")
+            hazel = Parent.create(name:"Hazel", breed:"Moyen Goldendoodle", genetics:"F1", role:"dam")
+            charles_litter_1 = Litter.create(name:"charles 1", birthday:"1/1/1970", breed:"Goldendoodle", parents:[charles, hazel])
+            charles_litter_2 = Litter.create(name:"charles 2", birthday:"5/5/1970", breed:"Goldendoodle", parents:[charles, hazel])
 
-    context "read" do
+            girl_a = Pupper.create(gender:"f", litter:charles_litter_1)
+            boy_a = Pupper.create(gender:"m", litter:charles_litter_2, sold: true)
+ 
+            admin = User.create(username: "admin", password: "password", role: 2)
+            allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
+            visit new_admin_litter_pupper_path(charles_litter_1)
+
+            
+        end 
+
         it 'can create new puppers' do 
             user = User.create(username: "admin", password: "password", role: 2)
             allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -31,9 +44,7 @@ describe 'Puppers' do
             find("#dam_parents").find(:xpath, "option[2]").select_option
             click_on "Create Pupper"
         end 
-    end
 
-    context "create" do
         it 'litter is automatically updated upon creation' do 
             user = User.create(username: "admin", password: "password", role: 2)
             allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)

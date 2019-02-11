@@ -70,7 +70,7 @@ pricing cards for easy updates
 ## Needs CRUD - create functionality for puppies
 ## Test create functionality for litters - works on localhost
 
-## litters - make it so that the name is automatically generated as parent1_parent2_bmonth_byear
+```## finished => litters - make it so that the name is automatically generated as parent1_parent2_bmonth_byear```
 
 ### set up the parents index page to separate the mother's from the father's - may require a migration
 
@@ -81,5 +81,7 @@ pricing cards for easy updates
 ### make litter creation only have mothers or fathers in creation form - parent creation needs to have a select box for role. 
 
 ### add sorting, edit, delete to puppy & litter 
-### add view only mothers, fathers to parents 
+### add view only mothers, fathers to parents index
 ### add view to puppies (visitor) for breed - sort for birthday / view for gender 
+
+integrate twitter api on homepage for news (facebook too maybe?)
