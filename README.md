@@ -2,6 +2,8 @@
 
 A site designed for a GoldenDoodle breeder. It enables them to label the breed of both parents as well as record the breed of a litter. Within each litter a puppy is labeled by gender, breed, and availability - all managed from the admin dashboard. This dashboard can also control which puppies are available to the site's visitors. Future iterations include pre-generated litter breeds based off parental genetics as well as the ability for visitors to log in through Facebook Oauth & and list their puppy preferences (for puppy visitation day).
 
+based off this site: http://fourpawsdoodranch.com/
+
 ## Getting Started
 
 Clone down the repo cd into the directory, bundle, and run `rake db:{create,migrate,seed}`. Following this run `rails s` and open localhost:3000.
@@ -31,7 +33,7 @@ Tests cover basic functionality - test completeness is marginal as this was star
 <img width="1439" alt="Screen Shot 2019-03-11 at 7 57 27 PM" src="https://user-images.githubusercontent.com/43397150/54169360-f7a22700-4437-11e9-8fb1-be4c26f4b09b.png">
 
 ## Admin Parent Index Page
-<img width="1438" alt="Screen Shot 2019-03-11 at 7 56 58 PM" src="https://user-images.githubusercontent.com/43397150/54169324-dd684900-4437-11e9-8cfb-baf6b20235e2.png">
+<img width="1430" alt="Screen Shot 2019-03-11 at 8 00 46 PM" src="https://user-images.githubusercontent.com/43397150/54169454-62536280-4438-11e9-8d13-c08d61b7cc81.png">
 
 ## Admin Parent Show Page
 <img width="1439" alt="Screen Shot 2019-03-11 at 7 58 48 PM" src="https://user-images.githubusercontent.com/43397150/54169379-1accd680-4438-11e9-957d-cb4630d60dc7.png">
