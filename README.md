@@ -23,42 +23,42 @@ Tests cover basic functionality - test completeness is marginal as this was star
 * [Ruby on Rails](https://rubyonrails.org/) - The web framework used
 
 
-Open Issues:
+# Open Issues:
 
-## Genetics
+### Genetics
 There needs to be a way to automatically calculate the breed based off of the parents' breed - for later.
 
-## Puppies
+### Puppies
 - Make it so that there is a default image for all puppers as well as a way to upload your own. - post production / pre-styling?
 
 - Make it so that puppies are named "boy 1" "boy 2" (or girl a, girl b, girl c..) - maybe make it so that it goes off a count of the amount of puppies in that litter?
 
-## Design
+### Design
 - the puppers index page should be grouped by mother's then by father's in their own cards/segments 
 
 - previously placed puppies page - just an image of the puppy
 
-## Litter Show Page
+### Litter Show Page
 - have a column for when the litter becomes available
     - need to edit the puppies to only be the ones that are unsold
     - this will also be the place where you can see each of the pupper's pictures. - the litter index will just be cards 
 
 
 
-# Dog Training Page
+### Dog Training Page
 pricing cards for easy updates
 
 
-# Available Puppies
+### Available Puppies
 
 - updated on
 - make it so that an image can be enlarged
 
-# Upcoming Litters
+### Upcoming Litters
 
 - migrate a status for litter that can be upcoming or born - with an anticipated birthdate associated with it
 
-## Validation tests needed for all models
+#### Validation tests needed for all models
 
-## Needs CRUD - create functionality for puppies
-## Test create functionality for litters - works on localhost
+#### Needs CRUD - create functionality for puppies
+#### Test create functionality for litters - works on localhost
