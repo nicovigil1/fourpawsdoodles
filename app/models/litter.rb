@@ -23,4 +23,8 @@ class Litter < ApplicationRecord
     def self.unsold_by_parent(parent)
         Litter.joins(:parents).joins(:puppers).where("puppers.sold = false AND parents.id = ?", parent.id)
     end 
+
+    def sold_count
+        puppers.where(sold: true).count
+    end 
 end 

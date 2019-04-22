@@ -12,9 +12,12 @@ Rails.application.routes.draw do
 
   namespace :admin do 
     resources :parents
-    resources :litters, only:[:index, :show, :new, :create]
-    resources :puppers, only:[:index, :new, :create]
+    resources :litters, only:[:index, :show, :new, :create] do 
+      resources :puppers, only: [:new, :create, :edit, :update]
+    end
+    resources :puppers, only:[:index]
     resources :sessions, only:[:destroy]
+    patch "/admin/toggle_sold", to: "puppers#toggle_sold", as: "toggle_sold"
   end
 
   resources :parents, only:[:index, :show, :new]#, :new, :create, :destroy, :edit, :update]

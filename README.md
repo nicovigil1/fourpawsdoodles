@@ -86,5 +86,24 @@ pricing cards for easy updates
 
 #### Validation tests needed for all models
 
-#### Needs CRUD - create functionality for puppies
-#### Test create functionality for litters - works on localhost
+## Needs CRUD - create functionality for puppies
+## Test create functionality for litters - works on localhost
+
+```## finished => litters - make it so that the name is automatically generated as parent1_parent2_bmonth_byear```
+
+### set up the parents index page to separate the mother's from the father's - may require a migration
+
+### set up a count of available puppies left in litters - only show those that have unsold puppies & within that only show available puppies (may change later)
+
+### style the login form 
+
+### make litter creation only have mothers or fathers in creation form - parent creation needs to have a select box for role. 
+
+### add sorting, edit, delete to puppy & litter 
+### add view only mothers, fathers to parents index
+### add view to puppies (visitor) for breed - sort for birthday / view for gender 
+
+integrate twitter api on homepage for news (facebook too maybe?)
+
+### carosuel image upload & crud on homepage
+### add age calculation to litter index page

@@ -18,7 +18,7 @@ RSpec.describe "it can create a new parent" do
         fill_in "Name",	    with: "how now" 
         fill_in "Breed",	with: "brown cow"
         fill_in "Genetics",	with: "F1" 
-        fill_in "Role",	    with: "sire" 
+        select "Sire",	    from: "parent_role" 
         click_on "Create Parent"
         
         expect(page).to have_content("how now")
@@ -33,7 +33,7 @@ RSpec.describe "it can create a new parent" do
         #fill_in "Name",	with: "how now" 
         fill_in "Breed",	with: "brown cow"
         fill_in "Genetics",	with: "F1" 
-        fill_in "Role",	    with: "sire" 
+        select "Dam",	    from: "parent_role" 
         click_on "Create Parent"
 
         expect(page).to have_content("Name can't be blank") 

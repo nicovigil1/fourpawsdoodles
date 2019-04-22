@@ -14,4 +14,12 @@ class Pupper < ApplicationRecord
         end
     end
 
+    def self.unsold
+        Pupper.where(sold: false)
+    end 
+
+    def toggle_sold 
+        toggle(:sold)
+    end
+
 end

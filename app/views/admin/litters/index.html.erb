@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Litters</title>
-</head>
-<body>
+<div class="ui container">
     <h1>Admin Litters</h1>
-    <table>
+    <table class="ui celled table"> 
         <thead>
             <th>Name</th>
             <th>Birthday</th>
@@ -20,11 +12,11 @@
         <tbody>
             <% @litters.each do |litter| %>
                 <tr id=<%="litter-#{litter.id}"%>>
-                    <td><%=link_to litter.name, litter_path(litter) %></td>
+                    <td><%=link_to litter.name, admin_litter_path(litter) %></td>
                     <td><%= litter.birthday %></td>
                     <td><%= litter.puppers.count %></td>
                         <td>
-                            <%= link_to "#{litter.parents[0].name}", admin_parent_path(litter.parents[0])%> 
+                            <%= link_to "#{litter.parents[0].name}", admin_parent_path(litter.parents[0])%>, 
                             <%= link_to "#{litter.parents[1].name}", admin_parent_path(litter.parents[1])%> 
                         </td>
                     <td><%= litter.breed %></td>
@@ -33,6 +25,5 @@
         </tbody>
     </table>
 
-    <p><%= link_to 'add a litter', new_admin_litter_path %></p>
-</body>
-</html>
+    <p><%= link_to 'add a litter', new_admin_litter_path, {class: "ui button"} %></p>
+</div>

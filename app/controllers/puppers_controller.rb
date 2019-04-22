@@ -1,6 +1,7 @@
 class PuppersController < ApplicationController
+
     def index
-        @puppers = Pupper.all
+        @puppers = Pupper.unsold
     end 
 
     # def new 

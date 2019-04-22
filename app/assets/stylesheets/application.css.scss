@@ -16,3 +16,47 @@
 
 @import "semantic-ui";
 @import "semantic-ui/collections/table";
+@import 'slick';
+@import 'slick-theme';
+
+body { 
+  background-image: image-url("four_paws_background.jpg");
+}
+
+.ui.homepage.container {
+  background-image: image-url("vintage-concrete.png");
+  background-repeat: inherit;
+  margin-bottom: 20px;
+}
+
+.ui.item.menu {
+  background-image: image-url("light-wooden-nav2.png");
+  // background-size: cover;
+  // background-position: 50% 50%;
+  filter: brightness(95%);
+}
+
+.ui.centered.segment {
+  background-image: image-url("vintage-concrete.png");
+}
+
+.slick-slide {
+  margin: 0 27px;
+}
+/* the parent */
+.slick-list {
+  margin: 0 -27px;
+}
+
+.ui.inverted.menu .red.active.item, .ui.menu {
+  box-shadow: 0 4px 8px 0 #131313a8;
+}
+
+.ui.centered.segment {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.ui.grid > * {
+  margin-top: 10px;
+}

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "Litter" do
-    context "read" do
+describe "Visitor Litter" do
+    context "visitor read" do
         it "can visit the litter show page" do
             charles = Parent.create(name:"Charles", breed:"Goldendoodle", genetics:"F1", role:"sire")
             hazel = Parent.create(name:"Hazel", breed:"Moyen Goldendoodle", genetics:"F1", role:"dam")
@@ -71,33 +71,6 @@ describe "Litter" do
 
             expect(page).to have_content(litter_1.name) 
             expect(page).to_not have_content(litter_2.name) 
-        end
-    end
-
-    context "create" do
-        it 'can visit the create a new litter page' do
-            user = User.create(username: "admin", password: "password", role: 2)
-            allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-            visit admin_litters_path
-
-            click_on("add a litter")
-
-            expect(current_path).to eq(new_admin_litter_path)
-        end 
-
-        xit 'can fill in the form and create a litter' do
-            visit litters_path
-            click_on("add a litter")
-
-            fill_in "Name",	    with: "Charles 3"
-            fill_in "Birthday", with: "1-1-1970"
-            fill_in "Mother",   with: "Charles"
-            fill_in "Father",   with: "Hazel"  
-            click_on "add litter"
-
-            expect(current_path).to eq(litters_path) 
-            expect(page).to have_content("Charles 3")
         end
     end
 end

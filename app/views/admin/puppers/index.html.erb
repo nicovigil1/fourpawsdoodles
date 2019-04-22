@@ -1,21 +1,36 @@
-<h1>All Puppies</h1>
-<table>
-    <thead>
-        <th>Birthday</th>
-        <th>Gender</th>
-        <th>Breed</th>
-        <th>Litter</th>
-        <th>Sold?</th>
-        <th>Mark as Sold</th>
-    </thead>
+<div class="ui container">
+    <h1>All Puppies</h1>
+    <table class="ui celled table">
+        <thead>
+            <th>Puppy ID</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Breed</th>
+            <th>Litter</th>
+            <th>Mark as Sold</th>
+        </thead>
 
-    <% @puppers.each do |pupper| %>
-    <tbody id="pupper-<%= pupper.id %>"">
-        <td><%= pupper.gender %></td>
-        <td><%= pupper.litter.breed %></td>
-        <td><%= pupper.sold? %></td>
-    </tbody>
-    <% end %>
-</table>
-
-<%= link_to 'add a pupper', new_admin_pupper_path %>
+        <% @puppers.each do |pupper| %>
+        <tbody id="pupper-<%= pupper.id %>">
+            <td><%= pupper.id %></td>
+            <td><%= pupper.litter.birthday %></td>
+            <td><%= pupper.gender %></td>
+            <td><%= pupper.litter.breed %></td>
+            <td><%= link_to pupper.litter.name, admin_litter_path(pupper.litter) %></td>
+            <td class="collapsing">
+                <% if pupper.sold? %>
+                    <div class="ui buttons">
+                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
+                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
+                    </div>
+                <% else %>
+                    <div class="ui buttons">
+                        <%= button_to "Sold", admin_toggle_sold_path(pupper), class: "ui button", method: :patch %>
+                        <%= button_to "Unsold", admin_toggle_sold_path(pupper), class: "ui active button", method: :patch %>
+                    </div>
+                <% end %>
+            </td>
+        </tbody>
+        <% end %>
+    </table>
+</div>

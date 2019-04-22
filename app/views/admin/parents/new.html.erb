@@ -11,16 +11,30 @@
         <div class="errors"><%=@errors.join(", ")%></div>
     <%end%>
 
-    <%= form_for [:admin, @parent] do |f|%>
-        <%= f.label :name%>
-        <%= f.text_field :name%>
-        <%= f.label :breed%>
-        <%= f.text_field :breed%>
-        <%= f.label :genetics%>
-        <%= f.text_field :genetics%>
-        <%= f.label :role%>
-        <%= f.text_field :role%>
-        <%=f.submit%>
-    <% end %>
+    <div class="ui container">
+        <div class="ui form">
+            <%= form_for [:admin, @parent] do |f|%>
+                <div class="four fields">
+                    <div class="field">
+                        <%= f.label :name%>
+                        <%= f.text_field :name%>
+                    </div>
+                    <div class="field">
+                        <%= f.label :breed%>
+                        <%= f.text_field :breed%>
+                    </div>
+                    <div class="field">
+                        <%= f.label :genetics%>
+                        <%= f.text_field :genetics%>
+                    </div>
+                    <div class="field">
+                        <%= f.label :role%>
+                        <%= f.select(:role, ([["Dam", "dam"], ["Sire", "sire"]]), {include_blank:""}, { :class => "ui fluid dropdown" })%>
+                    </div>
+                </div>
+                    <%=f.submit class: "ui button"%>
+            <% end %>
+        </div>
+    </div>
 </body>
 </html>

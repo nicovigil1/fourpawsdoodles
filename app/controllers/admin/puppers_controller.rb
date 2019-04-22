@@ -1,21 +1,37 @@
 class Admin::PuppersController < Admin::BaseController
     
     def index
-        @puppers = Pupper.all
+        @puppers = Pupper.order(:id)
     end 
 
-    def new 
+    def new
         @pupper = Pupper.new
     end 
 
     def create 
+        litter = Litter.find[params[:litter_id]]
         #first - build litter
+        Pupper.build_boys(litter, 0)
         # Pupper.build_boys(params)
         # build_girls
     end
 
+    def toggle_sold
+        pupper = Pupper.find(params[:format])
+        pupper.toggle_sold
+        pupper.save
+        redirect_to request.referrer
+    end 
+
+    def edit 
+        @pupper = Pupper.find(params[:id])
+    end 
 
     private
+
+    def litter_params
+        require(params).permit(:puppers)
+    end 
 
     # def convert_params
     #     breed = params[:pupper][:breed]
