@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190118060313) do
+ActiveRecord::Schema.define(version: 20190422205311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,12 +34,14 @@ ActiveRecord::Schema.define(version: 20190118060313) do
     t.string "registration"
     t.string "genetics"
     t.string "role"
+    t.string "image", default: "http://2r.co.za/wp-content/uploads/2016/08/no-image-yet.png"
   end
 
   create_table "puppers", force: :cascade do |t|
     t.string "gender"
     t.boolean "sold", default: false
     t.bigint "litter_id"
+    t.string "image", default: "http://2r.co.za/wp-content/uploads/2016/08/no-image-yet.png"
     t.index ["litter_id"], name: "index_puppers_on_litter_id"
   end
 

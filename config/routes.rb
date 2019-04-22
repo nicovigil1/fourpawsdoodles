@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     resources :parents
     resources :litters, only:[:index, :show, :new, :create] do 
-      resources :puppers, only: [:new, :create]
+      resources :puppers, only: [:new, :create, :edit, :update]
     end
     resources :puppers, only:[:index]
     resources :sessions, only:[:destroy]

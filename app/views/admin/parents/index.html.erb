@@ -11,6 +11,7 @@
                 <th>Genetics</th>
                 <th>Registration</th>
                 <th>Role</th>
+                <th></th>
             </tr>
         </thead>
         
@@ -24,6 +25,7 @@
                 <td data-label="Genetics"><%= parent.genetics %></td>
                 <td data-label="Registration"><%= parent.registration %></td>
                 <td data-label="Role"><%= parent.role %></td>
+                <td data-label="Edit"><%= link_to 'edit', edit_admin_parent_path(parent) %></td>
             </tr>
             <% end %>
         </tbody>

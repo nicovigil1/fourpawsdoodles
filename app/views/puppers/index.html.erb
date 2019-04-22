@@ -1,25 +1,23 @@
 <div class="ui container">
     <h1>Available Puppies!</h1>
-    <table class="ui celled table">
-        <thead>
-            <th>Puppy ID</th>
-            <th>Litter</th>
-            <th>Gender</th>
-            <th>Breed</th>
-            <th>Parents</th>
-        </thead>
-
+    <div class="ui four centered doubling link cards">
         <% @puppers.each do |pupper| %>
-        <tbody id="pupper-<%= pupper.id %>"">
-            <td><%= pupper.id %></td>
-            <td><%= link_to pupper.litter.name, litter_path(pupper.litter) %></td>
-            <td><%= pupper.gender %></td>
-            <td><%= pupper.litter.breed %></td>
-            <td>
-                <%= link_to pupper.parents.first.name, parents_path(pupper.parents.first) %>,
-                <%= link_to pupper.parents.last.name, parents_path(pupper.parents.last) %>
-            </td>
-        </tbody>
+            <div id="pupper-<%= pupper.id %>" class="ui card">
+                <div class="image">
+                    <%= image_tag pupper.image %>
+                </div>
+                <div class="content">
+                    <div class="header">
+                        id: <%= pupper.id %>    
+                    </div>
+                    <div class="description">
+                        litter: <%= link_to pupper.litter.name, litter_path(pupper.litter) %> <br> 
+                        gender: <%= pupper.gender %> <br>
+                        breed: <%= pupper.litter.breed %> <br>
+                        Parents: <%= link_to pupper.parents.first.name, parents_path(pupper.parents.first) %>, <%= link_to pupper.parents.last.name, parents_path(pupper.parents.last) %>
+                    </div>
+                </div>
+            </div>
         <% end %>
-    </table>
+    </div>
 </div>

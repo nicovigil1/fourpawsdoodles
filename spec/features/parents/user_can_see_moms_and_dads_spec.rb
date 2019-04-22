@@ -17,7 +17,7 @@ RSpec.describe "user can see moms and dads" do
 
             visit parents_path
 
-            within('#parents-table') do 
+            within('.parent') do 
                 expect(page).to have_content(charles.name)
                 expect(page).to have_content(charles.breed)
                 expect(page).to have_content(charles.genetics)

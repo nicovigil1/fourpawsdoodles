@@ -10,6 +10,7 @@ class Admin::LittersController < Admin::BaseController
         @puppers = @litter.puppers 
         @boys_count = @litter.gender_count("m")
         @girls_count = @litter.gender_count("f")
+        @sold_count = @litter.sold_count
     end 
     
     def new

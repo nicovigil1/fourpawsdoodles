@@ -2,33 +2,26 @@
     <h1>
         Parents
     </h1>
-    
-    <table class="ui celled table" id="parents-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Breed</th>
-                <th>Genetics</th>
-                <th>Registration</th>
-                <th>Role</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            <% @parents.each do |parent|%>
-            <tr>
-                <td>
+    <div class="ui four centered doubling link parent cards">
+    <% @parents.each do |parent|%>
+        <div class="ui card">
+            <div class="image">
+                <%= image_tag parent.image %> 
+            </div>
+            <div class="content">
+                <br>
+                <div class="header">
                     <%= link_to "#{parent.name}", parent_path(parent) %>
-                </td>
-                <td><%= parent.breed %></td>
-                <td><%= parent.genetics %></td>
-                <td><%= parent.registration %></td>
-                <td><%= parent.role %></td>
-            </tr>
-            <% end %>
-        </tbody>
-
-    </table>
-
+                </div>
+                <div class="description">
+                    Breed: <%= parent.breed %>
+                    Genetics: <%= parent.genetics %>  
+                    Registration: <%= parent.registration %>  
+                    Role: <%= parent.role %>  
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
     <br>
 </div>

@@ -1,6 +1,6 @@
 
     <% if current_user && current_user.role == "admin" %>
-        <div class="navbar ui inverted red five item menu">
+        <div class="navbar ui five item menu">
             <%= link_to 'Home', admin_litters_path, {class: "item"} %>
             <%= link_to 'Parents', admin_parents_path, {class: "item"} %>
             <%= link_to 'Puppies', admin_puppers_path, {class: "item"} %>
@@ -8,7 +8,7 @@
             <%= link_to 'log out', admin_session_path(current_user), {class: 'item', method: :delete} %>
         </div>
     <% else %>
-        <nav class="navbar ui inverted blue four item menu">
+        <nav class="navbar ui four item menu">
             <%= link_to 'Home', homepage_path, {class: "item"} %>
             <%= link_to 'Meet the Parents', parents_path, {class: "item"} %>
             <%= link_to 'Available Puppies', puppers_path, {class: "item"} %>

@@ -54,4 +54,17 @@ describe Litter do
 
         expect(Litter.unsold_by_parent(hazel)).to eq([litter_1])
     end
+
+    it 'can count a litters sold puppies' do 
+        charles = Parent.create(name:"Charles", breed:"Goldendoodle", genetics:"F1", role:"sire")
+        hazel = Parent.create(name:"Hazel", breed:"Moyen Goldendoodle", genetics:"F1", role:"dam")
+        litter_1 = Litter.create(name: "testing1", birthday: Time.now, breed:"Goldendoodle", parents: [charles, hazel])
+        litter_2 = Litter.create(name: "testing", birthday: Time.now, breed:"Goldendoodle", parents: [charles, hazel])
+        
+        pup1 = Pupper.create(gender:"f", litter:litter_2)
+        pup2 = Pupper.create(gender:"f", litter:litter_2, sold: true)
+        pup3 = Pupper.create(gender:"m", litter:litter_2, sold: true)
+
+        expect(litter_2.sold_count).to eq(2)
+    end
 end

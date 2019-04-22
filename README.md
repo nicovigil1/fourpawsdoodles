@@ -85,3 +85,6 @@ pricing cards for easy updates
 ### add view to puppies (visitor) for breed - sort for birthday / view for gender 
 
 integrate twitter api on homepage for news (facebook too maybe?)
+
+### carosuel image upload & crud on homepage
+### add age calculation to litter index page
