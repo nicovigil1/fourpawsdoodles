@@ -12,8 +12,21 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require_self
 
 // Loads all Semantic javascripts
 //= require semantic-ui
 //= require jquery2
-//= require jquery.slick
+
+
+carosuel = $('.carosuel').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4500,
+});
+
+window.onload = () => {
+  carosuel();
+}
+

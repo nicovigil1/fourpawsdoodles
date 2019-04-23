@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
 @import "semantic-ui";
 @import "semantic-ui/collections/table";
 @import 'slick';
@@ -60,3 +61,25 @@ body {
 .ui.grid > * {
   margin-top: 10px;
 }
+
+// .carosuel-case {
+//   width: 100%;
+//   // display: flex;
+// }
+
+// .carosuel {
+//   margin: auto;
+//   width: 60%;
+// }
+
+// .carosuel div {
+//   text-align: center;
+// }
+
+.carosuel img {
+  margin: auto;
+}
+
+// #imga {
+//   margin: 0 10% 0 10%;
+// }
