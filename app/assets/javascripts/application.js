@@ -13,10 +13,10 @@
 //= require rails-ujs
 //= require_tree .
 //= require_self
-
 // Loads all Semantic javascripts
 //= require semantic-ui
 //= require jquery2
+
 
 
 carosuel = $('.carosuel').slick({
