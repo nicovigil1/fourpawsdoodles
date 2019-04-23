@@ -27,6 +27,6 @@ carosuel = $('.carosuel').slick({
 });
 
 window.onload = () => {
-  carosuel();
+  carosuel
 }
 
