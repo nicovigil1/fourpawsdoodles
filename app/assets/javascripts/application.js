@@ -15,9 +15,3 @@
 //= require_self
 // Loads all Semantic javascripts
 //= require semantic-ui
-//= require jquery
-//= require jquery2
-
-
-
-

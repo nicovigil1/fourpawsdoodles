@@ -3,8 +3,9 @@ var carosuel = $('.carosuel').slick({
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 4500,
+  infinite: true
 });
 
-window.onload = () => {
+$(document).ready(function() {
   carosuel()
-}
+})
