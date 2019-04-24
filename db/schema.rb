@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190422205311) do
+ActiveRecord::Schema.define(version: 20190424163514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20190422205311) do
     t.string "name"
     t.date "birthday"
     t.string "breed"
+    t.string "image", default: "http://2r.co.za/wp-content/uploads/2016/08/no-image-yet.png"
   end
 
   create_table "parent_litters", force: :cascade do |t|
