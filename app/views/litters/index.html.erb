@@ -4,7 +4,7 @@
         <% @litters.each do |litter| %>
             <div class="ui card">
                 <div class="image">
-                    <%= image_tag 'slide3', {height: 250, width: 250} %>
+                    <%= image_tag litter.image, {height: 250, width: 250} %>
                 </div>
                 <div id=<%="litter-#{litter.id}"%> class="content">
                     <div class="header">
