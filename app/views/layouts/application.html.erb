@@ -6,11 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <%= render partial: '/sessions/navbar' %>
     <%= yield %>
+    
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
