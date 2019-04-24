@@ -15,12 +15,12 @@
 //= require_self
 // Loads all Semantic javascripts
 //= require semantic-ui
-//= require jquery2
 //= require jquery
+//= require jquery2
 
 
 
-carosuel = $('.carosuel').slick({
+var carosuel = $('.carosuel').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
