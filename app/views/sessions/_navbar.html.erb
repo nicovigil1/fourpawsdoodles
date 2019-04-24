@@ -5,7 +5,7 @@
             <%= link_to 'Parents', admin_parents_path, {class: "item"} %>
             <%= link_to 'Puppies', admin_puppers_path, {class: "item"} %>
             <%= link_to 'Litters', admin_litters_path, {class: "item"} %>
-            <%= link_to 'log out', admin_session_path(current_user), {class: 'item', method: :delete} %>
+            <%= link_to 'log out', admin_session_path(current_user), {method: :delete, class: "item"} %>
         </div>
     <% else %>
         <nav class="navbar ui four item menu">

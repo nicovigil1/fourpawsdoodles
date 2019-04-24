@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     resources :puppers, only:[:index]
     resources :sessions, only:[:destroy]
+    get "/sessions/:id", to: "sessions#destroy"
     patch "/admin/toggle_sold", to: "puppers#toggle_sold", as: "toggle_sold"
   end
 
